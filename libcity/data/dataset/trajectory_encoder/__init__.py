@@ -1,3 +1,4 @@
+from .tul_trajectory_encoder import TulTrajectoryEncoder
 from .standard_trajectory_encoder import StandardTrajectoryEncoder
 from .lstpm_encoder import LstpmEncoder
 from .atstlstm_encoder import AtstlstmEncoder
@@ -8,6 +9,7 @@ from .strnn_encoder import StrnnEncoder
 from .cara_encoder import CARATrajectoryEncoder
 
 __all__ = [
+    "TulTrajectoryEncoder",
     "StandardTrajectoryEncoder",
     "LstpmEncoder",
     "AtstlstmEncoder",

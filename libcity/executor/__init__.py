@@ -21,9 +21,11 @@ from libcity.executor.megacrn_executor import MegaCRNExecutor
 from libcity.executor.trafformer_executor import TrafformerExecutor
 from libcity.executor.pdformer_executor import PDFormerExecutor
 from libcity.executor.astgnn_executor import ASTGNNExecutor
+from libcity.executor.traj_tul_pred_executor import TrajTulPredExecutor
 
 __all__ = [
     "TrajLocPredExecutor",
+    "TrajTulPredExecutor",
     "TrafficStateExecutor",
     "DCRNNExecutor",
     "MTGNNExecutor",

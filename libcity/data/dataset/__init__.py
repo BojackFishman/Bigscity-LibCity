@@ -10,9 +10,12 @@ from libcity.data.dataset.eta_dataset import ETADataset
 from libcity.data.dataset.map_matching_dataset import MapMatchingDataset
 from libcity.data.dataset.roadnetwork_dataset import RoadNetWorkDataset
 
+from libcity.data.dataset.trajectory_tul_dataset import TrajectoryTulDataset
+
 __all__ = [
     "AbstractDataset",
     "TrajectoryDataset",
+    "TrajectoryTulDataset",
     "TrafficStateDataset",
     "TrafficStateCPTDataset",
     "TrafficStatePointDataset",
