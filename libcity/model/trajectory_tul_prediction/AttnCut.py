@@ -8,10 +8,10 @@ from libcity.utils.layers import PositionalEncoding, get_attn_pad_mask, EncoderL
 
 from libcity.model.abstract_model import AbstractModel
 
-class Attn(AbstractModel):
+class AttnCut(AbstractModel):
 
     def __init__(self, config, data_feature):
-        super(Attn, self).__init__(config, data_feature)
+        super(AttnCut, self).__init__(config, data_feature)
         self.device = config['device']
 
         self.localGcn_hidden = config['localGcn_hidden']
@@ -193,8 +193,8 @@ class Embedding(nn.Module):
         """
         super(Embedding, self).__init__()
         self.timeEmb = nn.Embedding(125, 32, padding_idx=124)  # time Embedding
-        self.stateEmb = nn.Embedding(399, 32, padding_idx=398)  # state Embedding
-        self.fc = nn.Linear(d_model + 64, d_model)
+        # self.stateEmb = nn.Embedding(399, 32, padding_idx=398)  # state Embedding
+        self.fc = nn.Linear(d_model + 32, d_model)
         self.tanh = nn.Tanh()
 
     def forward(self, input_seq_emb, time_seq, state_seq):
@@ -209,7 +209,7 @@ class Embedding(nn.Module):
             [torch.tensor]: [fusion embedding]
         """
         embedding = self.tanh(self.fc(torch.cat(
-            [input_seq_emb, self.timeEmb(time_seq), self.stateEmb(state_seq)], dim=-1)))
+            [input_seq_emb, self.timeEmb(time_seq)], dim=-1)))
         return embedding
 
 

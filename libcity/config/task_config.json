@@ -1,6 +1,6 @@
 {
     "traj_tul": {
-        "allowed_model": ["RNN", "LSTM", "Attn"],
+        "allowed_model": ["RNN", "LSTM", "Attn", "AttnCut"],
         "allowed_dataset": ["foursquare_tky", "foursquare_nyc", "gowalla", "foursquare_serm"],
         "RNN": {
             "dataset_class": "TrajectoryTulDataset",
@@ -9,6 +9,12 @@
             "traj_encoder": "TulTrajectoryEncoder"
         },
         "Attn": {
+            "dataset_class": "TrajectoryTulDataset",
+            "executor": "TrajTulPredExecutor",
+            "evaluator": "TrajLocPredEvaluator",
+            "traj_encoder": "TulTrajectoryEncoder"
+        },
+        "AttnCut": {
             "dataset_class": "TrajectoryTulDataset",
             "executor": "TrajTulPredExecutor",
             "evaluator": "TrajLocPredEvaluator",

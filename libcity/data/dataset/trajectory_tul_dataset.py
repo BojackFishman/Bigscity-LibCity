@@ -14,8 +14,8 @@ from libcity.utils.rawprocess import grid_process, generate_graph
 import torch
 
 parameter_list = ['dataset', 'min_session_len', 'min_sessions', "max_session_len",
-                  'cut_method', 'window_size', 'min_checkins']
-graph_distinct_list = ['train_rate', 'eval_rate']
+                  'cut_method', 'window_size', 'min_checkins', 'grid_size']
+graph_distinct_list = ['train_rate', 'eval_rate', 'grid_size']
 
 class TrajectoryTulDataset(AbstractDataset):
 
@@ -373,7 +373,7 @@ class TrajectoryTulDataset(AbstractDataset):
         # print(traj['Lat'][0])
         # print(traj.dtypes)
 
-        grid_distance = 2000
+        grid_distance = self.config['grid_size']
         tracks_data, grid_list = grid_process(traj, grid_distance)
         # print(tracks_data.head(3))
         # print(tracks_data.dtypes)

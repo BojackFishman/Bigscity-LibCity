@@ -1,0 +1,14 @@
+{
+    "localGcn_hidden": 512,
+    "globalGcn_hidden": 512,
+    "gcn_dropout": 0.5,
+    "Attn_Strategy": "cos",
+    "Softmax_Strategy": "complex",
+    "Pool_Strategy": "max",
+    "d_model": 128,
+    "d_k": 64,
+    "d_v": 64,
+    "d_ff": 512,
+    "n_heads": 5,
+    "n_layers": 2
+}

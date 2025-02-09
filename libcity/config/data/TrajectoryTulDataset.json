@@ -1,4 +1,5 @@
 {
+  "grid_size": 1000,
   "min_session_len": 5,
   "max_session_len": 50,
   "min_sessions": 2,

@@ -4,7 +4,7 @@ from libcity.data.dataset.trajectory_encoder.abstract_trajectory_encoder import 
 from libcity.utils import parse_time
 
 parameter_list = ['dataset', 'min_session_len', 'min_sessions', 'traj_encoder', 'cut_method',
-                  'window_size', 'history_type', 'min_checkins', 'max_session_len']
+                  'window_size', 'min_checkins', 'max_session_len', 'grid_size']
 
 
 class TulTrajectoryEncoder(AbstractTrajectoryEncoder):
